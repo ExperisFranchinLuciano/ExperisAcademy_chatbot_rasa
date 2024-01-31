@@ -4,6 +4,9 @@
 # Rasa cache
 .rasa
 
+# Rasa models
+models/
+
 # python caches
 __pycache__/
 
@@ -14,4 +17,4 @@ venv
 *.db
 
 # spacy models
-it_core_news_lg-3.7.0.tar.gz
+it_core_news_lg-*.tar.gz

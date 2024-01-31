@@ -32,7 +32,7 @@ class RecognizeUserData(Action):
         if not db_name.split('.')[-1] == 'db':
             db_name += '.db'
 
-        conn = sqlite3.connect(DB_NAME)
+        conn = sqlite3.connect(db_name)
 
         cod_fisc = tracker.get_slot('cod_fisc')
         print(cod_fisc)
