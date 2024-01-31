@@ -1,0 +1,23 @@
+version: "3.1"
+
+
+stories:
+
+- story: interactive_story_1
+  steps:
+    - action: utter_greet
+    - intent: greet
+    - action: utter_ask_cod_fisc
+    - intent: cod_fisc_response
+      entities:
+        - cod_fisc: ABCABC00A00E000G
+    - slot_was_set:
+        - cod_fisc: ABCABC00A00E000G
+    - action: utter_ask_first_name
+    - intent: first_name_response
+      entities:
+        - first_name: Andrea
+    - slot_was_set:
+        - first_name: Andrea
+    - action: recognize_user_data
+    - action: utter_submit

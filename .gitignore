@@ -1,0 +1,17 @@
+# Pycharm files
+.idea
+
+# Rasa cache
+.rasa
+
+# python caches
+__pycache__/
+
+# virtual environment
+venv
+
+# databases
+*.db
+
+# spacy models
+it_core_news_lg-3.7.0.tar.gz

@@ -1,0 +1,59 @@
+version: '3.1'
+
+
+intents:
+  - greet
+  - cod_fisc_response:
+      use_entities:
+      - cod_fisc
+  - first_name_response:
+      use_entities:
+      - first_name
+
+
+entities:
+- cod_fisc
+- first_name
+
+
+slots:
+  cod_fisc:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cod_fisc
+  first_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: first_name
+
+responses:
+  utter_greet:
+    - text: Ciao!
+    - text: Benvenuto!
+    - text: Ciao, sono il bot.
+  utter_ask_cod_fisc:
+    - text: Per favore indica il tuo codice fiscale.
+  utter_ask_first_name:
+    - text: Qual è il tuo nome di battesimo? (Rispondi solo con il nome, non il cognome)
+  utter_submit:
+    - text: Perfetto. Grazie!
+  utter_please_rephrase:
+    - text: Non è chiaro, per favore ripeti.
+
+
+actions:
+- utter_ask_cod_fisc
+- recognize_user_data
+- utter_greet
+- utter_please_rephrase
+- utter_submit
+- utter_ask_first_name
+- action_empty_slots
+- recognize_user
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

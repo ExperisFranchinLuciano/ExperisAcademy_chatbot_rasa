@@ -1,0 +1,87 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - ciao
+    - ehi
+    - hei
+    - ciao bot
+    - ehi ciao
+    - ehi bot
+    - buongiorno
+    - ciao di nuovo
+    - ciao gente
+    - ciao signore
+    - ciao amico!
+    - salve
+    - ciao a tutti
+    - salve, c'è qualcuno?
+    - ciao chatbot
+    - ci sei?
+    - buonasera
+    - buona sera
+    - buon giorno
+    - buon pomeriggio
+    - Ciao
+    - Buon pomeriggio
+
+- intent: first_name_response
+  examples: |
+    - mi chiamo [Carlo](first_name)
+    - il mio nome è [Francesco](first_name)
+    - [Emanuele](first_name)
+    - [Sandro](first_name)
+    - [Andrea](first_name)
+    - [Claudio](first_name)
+    - [Walter](first_name)
+    - [Cosimo](first_name)
+    - [Rossella](first_name)
+    - [Angelica](first_name)
+    - [Luca](first_name)
+    - [Corinna](first_name)
+    - [Franco](first_name)
+    - [Morena](first_name)
+    - [Roberto](first_name)
+    - [Michael](first_name)
+    - [Leandro](first_name)
+- intent: last_name_response
+  examples: |
+    - mi chiamo [Abagnale](last_name)
+    - il mio cognome è [De Santi](last_name)
+    - [Parisi](last_name)
+    - [Ranieri](last_name)
+    - [Lupelli](last_name)
+    - [Losacco](last_name)
+    - [Barnaba](last_name)
+    - [Giordano](last_name)
+    - [Loconsole](last_name)
+    - [Pogba](last_name)
+    - [Paccione](last_name)
+    - [Lorusso](last_name)
+    - [DeSerio](last_name)
+    - [D'Annunzio](last_name)
+    - [De Girolamo](last_name)
+    - [Kant](last_name)
+    - [Jackson](last_name)
+    - [Sansone](last_name)
+    - [Ciscutti](last_name)
+    - [Caminiti](last_name)
+- intent: cod_fisc_response
+  examples: |
+    - Il mio codice fiscale e' [CSCRFL01A04A662D](cod_fisc)
+    - [CSCRFL01A04A662D](cod_fisc)
+    - codice fiscale: [CSCRFL01A04A662D](cod_fisc)
+    - [STBMCP01P59A662Q](cod_fisc)
+    - [DTLMRA72L71A662C](cod_fisc)
+    - [LSCCLA01A04A662D](cod_fisc)
+    - [CSCLCU94S04A662G](cod_fisc)
+    - [CMNLDR99T28A883P](cod_fisc)
+    - [CFGMRA98S06L049I](cod_fisc)
+    - [CMNMRC94E13A882P](cod_fisc)
+    - [CSCRFL01A04A662D](cod_fisc)
+    - [ZAPLEA04A03E898G](cod_fisc)
+
+
+- regex: cod_fisc
+  examples: |
+    - ^(?:[A-Z][AEIOU][AEIOUX]|[AEIOU]X{2}|[B-DF-HJ-NP-TV-Z]{2}[A-Z]){2}(?:[\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[15MR][\dLMNP-V]|[26NS][0-8LMNP-U])|[DHPS][37PT][0L]|[ACELMRT][37PT][01LM]|[AC-EHLMPR-T][26NS][9V])|(?:[02468LNQSU][048LQU]|[13579MPRTV][26NS])B[26NS][9V])(?:[A-MZ][1-9MNP-V][\dLMNP-V]{2}|[A-M][0L](?:[1-9MNP-V][\dLMNP-V]|[0L][1-9MNP-V]))[A-Z]$
